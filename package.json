@@ -4,20 +4,47 @@
   "description": "backend for thinkie-pinkie game",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "NODE_ENV=development nodemon index.js",
+    "dev-auth-off": "AUTH_OFF=yes yarn dev",
+    "start": "node index.js",
+    "heroku:build": "yarn build && heroku login && heroku create thinkie-pinkie-api",
+    "heroku:remote": "heroku git:remote -a thinkie-pinkie-api",
+    "heroku:push": "git push heroku master",
+    "quick-check": "git push origin HEAD && yarn heroku:push && heroku logs --tail"
   },
+  "keywords": [
+    "node",
+    "express",
+    "graphql",
+    "mongo"
+  ],
+  "author": "david hernquist",
+  "license": "ISC",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hernquist/thinkie-pinkie-api.git"
   },
-  "keywords": [
-    "mongo",
-    "graphql"
-  ],
-  "author": "david hernquist",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/hernquist/thinkie-pinkie-api/issues"
   },
-  "homepage": "https://github.com/hernquist/thinkie-pinkie-api#readme"
+  "homepage": "https://github.com/hernquist/thinkie-pinkie-api#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "date-fns": "^1.30.1",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "express-graphql": "^0.8.0",
+    "graphql": "^14.3.1",
+    "graphql-tools": "^4.0.4",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.5.12",
+    "morgan": "^1.9.1",
+    "twilio": "^3.31.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
 }
