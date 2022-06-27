@@ -12,9 +12,9 @@ const { SECRET, MONGO_PASSWORD, NODE_ENV, PORT, LOCAL_DATABASE } = process.env;
 const port = PORT || 3003;
 const development = NODE_ENV === "development";
 const graphiql = development;
-const dbName = "challenge";
+const dbName = "thinkie-pinkie";
 
-const DATABASE = `mongodb+srv://firstUser:${MONGO_PASSWORD}@cluster0-w51h9.mongodb.net/${dbName}?retryWrites=true&w=majority`;
+const DATABASE = `mongodb+srv://firstUser:${MONGO_PASSWORD}@cluster0.nol7s.mongodb.net/${dbName}?retryWrites=true&w=majority`;
 
 // const database = development ? LOCAL_DATABASE : DATABASE;
 const database = DATABASE;
