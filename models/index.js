@@ -1,5 +1,26 @@
 const mongoose = require("mongoose");
 
+const user = {
+  name: String,
+  email: String,
+  password: String,
+  //   practices: [practice],
+  //   upNextModules: [String],
+};
+
+const solution = {
+  name: String,
+  primary: Boolean,
+};
+
+const thinkiePinkie = {
+  hint: String,
+  numberOfSyllables: Number,
+  solutions: [solution],
+  isAGameOfTheDay: Boolean,
+  dayOfTheYear: Number,
+};
+
 // const practice = {
 //   userId: String,
 //   completedOn: String,
@@ -11,14 +32,6 @@ const mongoose = require("mongoose");
 //   score: Number,
 //   assessmentType: String,
 // };
-
-const user = {
-  name: String,
-  email: String,
-  password: String,
-  //   practices: [practice],
-  //   upNextModules: [String],
-};
 
 // const contentType = mongoose.Schema({
 //   name: String,
@@ -45,6 +58,7 @@ const user = {
 // };
 
 const User = mongoose.model("User", user);
+const ThinkiePinkie = mongoose.model("ThinkiePinkie", thinkiePinkie);
 // const Practice = mongoose.model("Practice", practice);
 // const Module = mongoose.model("Module", moduleType);
 // const Content = mongoose.model("Content", content);
@@ -52,6 +66,7 @@ const User = mongoose.model("User", user);
 
 module.exports = {
   User,
+  ThinkiePinkie,
   //   Practice,
   //   Module,
   //   Content,

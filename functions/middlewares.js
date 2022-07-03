@@ -4,8 +4,9 @@ const { SECRET } = process.env;
 const authUserMiddleware = async (req) => {
   const token = req.headers["x-token"];
   console.log("[addUserMiddleware] token:", token);
-  const message = req.headers.referer;
-  console.log("[addUserMiddleware] referer:", message);
+
+  const referer = req?.headers?.referer;
+  console.log("[addUserMiddleware] referer:", referer);
 
   if (!token) {
     console.log("No token sent");
@@ -19,7 +20,7 @@ const authUserMiddleware = async (req) => {
       if (!user) {
         console.log("No user found!");
       }
-      
+
       req.user = user;
     } catch (err) {
       console.log(`Error: ${err.name}`);

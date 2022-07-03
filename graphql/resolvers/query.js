@@ -18,6 +18,12 @@ module.exports = {
         return new Error("user not authenticated");
       }
     },
+    getThinkiePinkie: async (__, { id }, context) => {
+      const { ThinkiePinkie } = context;
+      const thinkiePinkie = await ThinkiePinkie.find({ _id: id });
+
+      return prepare(thinkiePinkie[0]);
+    },
     // module: async (__, { slug }, { Module }) => {
     //   const [mod] = await Module.find({ slug });
 
