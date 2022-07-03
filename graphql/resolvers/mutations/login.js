@@ -5,7 +5,6 @@ const bcrypt = require("bcrypt");
 module.exports = {
   login: async (__, { email, password }, { User, SECRET }) => {
     const user = await User.findOne({ email: email });
-    console.log(user);
     let message = "";
     if (!user) {
       return {
@@ -31,6 +30,7 @@ module.exports = {
     return {
       token,
       message,
+      user,
     };
   },
 };
