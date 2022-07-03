@@ -45,7 +45,7 @@ const user = {
 // };
 
 const User = mongoose.model("User", user);
-const Practice = mongoose.model("Practice", practice);
+// const Practice = mongoose.model("Practice", practice);
 // const Module = mongoose.model("Module", moduleType);
 // const Content = mongoose.model("Content", content);
 // const ContentMap = mongoose.model("Content-Map", contentMap);

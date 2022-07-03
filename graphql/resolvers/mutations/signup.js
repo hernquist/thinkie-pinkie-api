@@ -31,6 +31,7 @@ module.exports = {
     return {
       token,
       message: "",
+      user: savedUser,
     };
   },
 };

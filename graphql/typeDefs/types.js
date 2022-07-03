@@ -8,5 +8,6 @@ module.exports = `
   type AuthObject {
     token: String
     message: String
+    user: User
   }
 `;
