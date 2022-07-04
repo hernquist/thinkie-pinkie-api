@@ -14,6 +14,7 @@ const solution = {
 };
 
 const thinkiePinkie = {
+  userId: String,
   hint: String,
   numberOfSyllables: Number,
   solutions: [solution],
