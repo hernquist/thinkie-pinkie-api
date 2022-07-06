@@ -4,7 +4,7 @@ module.exports = {
     { hint, solutions, numberOfSyllables },
     { ThinkiePinkie, authUser }
   ) => {
-    const userId = authUser?._id;
+    const userId = authUser?._id || process.env.ADMIN_ID;
 
     const thinkiePinkie = {
       userId,
