@@ -8,8 +8,7 @@ const schema = require("./graphql/schema");
 const { authUserMiddleware } = require("./functions/middlewares");
 const Models = require("./models");
 
-const { SECRET, MONGO_PASSWORD, NODE_ENV, PORT, LOCAL_DATABASE, MONGO_URI } =
-  process.env;
+const { SECRET, NODE_ENV, PORT, LOCAL_DATABASE, MONGO_URI } = process.env;
 const port = PORT || 3003;
 const development = NODE_ENV === "development";
 const graphiql = development;
