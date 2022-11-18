@@ -8,9 +8,9 @@
     "dev": "NODE_ENV=development nodemon index.js",
     "dev-auth-off": "AUTH_OFF=yes yarn dev",
     "start": "node index.js",
-    "heroku:build": "yarn build && heroku login && heroku create thinkie-pinkie-api",
+    "heroku:build": "heroku login && heroku create thinkie-pinkie-api",
     "heroku:remote": "heroku git:remote -a thinkie-pinkie-api",
-    "heroku:push": "git push heroku master",
+    "heroku:push": "git push heroku main",
     "quick-check": "git push origin HEAD && yarn heroku:push && heroku logs --tail"
   },
   "keywords": [
