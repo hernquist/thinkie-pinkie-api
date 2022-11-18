@@ -8,15 +8,10 @@ const schema = require("./graphql/schema");
 const { authUserMiddleware } = require("./functions/middlewares");
 const Models = require("./models");
 
-const { SECRET, NODE_ENV, PORT, LOCAL_DATABASE, MONGO_URI } = process.env;
+const { SECRET, NODE_ENV, PORT, MONGO_URI } = process.env;
 const port = PORT || 3003;
 const development = NODE_ENV === "development";
 const graphiql = development;
-const dbName = "thinkie-pinkie";
-
-// const DATABASE = `mongodb+srv://firstUser:${MONGO_PASSWORD}@cluster0.nol7s.mongodb.net/${dbName}?retryWrites=true&w=majority`;
-
-// const database = development ? LOCAL_DATABASE : DATABASE;
 const database = MONGO_URI;
 
 mongoose
