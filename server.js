@@ -26,7 +26,6 @@ mongoose.connection.on("error", (err) => {
 const app = express();
 
 app.use(authUserMiddleware);
-
 app.use(morgan("dev"));
 app.use(cors("*"));
 app.use(bodyParser.json());
