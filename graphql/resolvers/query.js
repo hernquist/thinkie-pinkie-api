@@ -24,23 +24,15 @@ module.exports = {
 
       return prepare(thinkiePinkie[0]);
     },
-    // module: async (__, { slug }, { Module }) => {
-    //   const [mod] = await Module.find({ slug });
-
-    //   return {
-    //     _id: mod._id,
-    //     numberOfTurns: mod.numberOfTurns,
-    //     slug: mod.slug,
-    //     content: mod.content,
-    //   };
-    // },
-    // content: async (__, { type, name }, { Content }) => {
-    //   const [content] = await Content.find({ type, name });
-    //   return content;
-    // },
-    // contentMap: async (__, ___, { ContentMap }) => {
-    //   const contentMaps = await ContentMap.find({});
-    //   return contentMaps;
-    // },
+    getRandomThinkiePinkie: async (_, __, context) => {
+      const { ThinkiePinkie } = context;
+      const all = await ThinkiePinkie.find({});
+      const numberOfThinkiePinkies = all?.length || 0;
+      if (numberOfThinkiePinkies > 0) {
+        const index = Math.floor(numberOfThinkiePinkies * Math.random());
+        return prepare(all[index]);
+      }
+      return null;
+    },
   },
 };
