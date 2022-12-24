@@ -4,3 +4,9 @@ module.exports = `
     primary: Boolean,
   }
 `;
+
+// input SubmitSolutionInput {
+//   solved: Boolean,
+//   thinkiePinkieId: String,
+//   wrongSolution: String,
+// }
