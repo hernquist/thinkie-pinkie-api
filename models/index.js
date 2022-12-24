@@ -5,6 +5,7 @@ const score = {
   solved: Boolean,
   userId: String,
   thinkiePinkieId: String,
+  wrongSolutions: [String],
 };
 
 const user = {
